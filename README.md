@@ -89,45 +89,25 @@ window.scrollBy(0, window.innerHeight);
 What about function to remove ALL watch later videos? Try one of these!
 
 ```javascript
-setInterval(function() {
-    document.querySelector('#contents button[aria-label="Action menu"]').click();
-    var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
-        for (var i = 0; i &lt; things.snapshotLength; i++) {
-            things.snapshotItem(i).click();
-        }        
-}, 1000);
+setInterval(function () {
+    video = document.getElementsByTagName('ytd-playlist-video-renderer')[0];
+
+    video.querySelector('#primary button[aria-label="Action menu"]').click();
+
+    var things = document.evaluate(
+        '//span[contains(text(),"Remove from")]',
+        document,
+        null,
+        XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+        null
+    );
+
+    for (var i = 0; i < things.snapshotLength; i++) 
+    {
+        things.snapshotItem(i).click();
+    }
+}, 500);
 
 ```
-```javascript
-setInterval(function() {
-    document.querySelector('#primary button[aria-label="Action menu"]').click();
-    var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
-        for (var i = 0; i &lt; things.snapshotLength; i++) {
-            things.snapshotItem(i).click();
-        }        
-}, 1000);
-
-
-```
-
-```javascript
-setInterval(function() {
-    document.querySelector('#contents button#button').click();
-    var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
-        for (var i = 0; i < things.snapshotLength; i++) {
-            things.snapshotItem(i).click();
-        }        
-}, 1000);
-
-```
-
-```javascript
-setInterval(function() {
-    document.querySelector('#primary button#button').click();
-    var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
-        for (var i = 0; i < things.snapshotLength; i++) {
-            things.snapshotItem(i).click();
-        }        
-}, 1000);
 
 ```
