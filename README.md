@@ -98,7 +98,7 @@ setInterval(function() {
 }, 1000);
 
 ```
-```
+```javascript
 setInterval(function() {
     document.querySelector('#primary button[aria-label="Action menu"]').click();
     var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
@@ -110,7 +110,7 @@ setInterval(function() {
 
 ```
 
-```
+```javascript
 setInterval(function() {
     document.querySelector('#contents button#button').click();
     var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
@@ -121,7 +121,7 @@ setInterval(function() {
 
 ```
 
-```
+```javascript
 setInterval(function() {
     document.querySelector('#primary button#button').click();
     var things = document.evaluate('//span[contains(text(),"Watch later")]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);
